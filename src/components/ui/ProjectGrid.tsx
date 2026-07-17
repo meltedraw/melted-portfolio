@@ -57,8 +57,8 @@ function ProjectCard({ project }: { project: Project }) {
         >
           <div
             style={{
+              height: "240px",
               aspectRatio: project.coverRatio,
-              maxHeight: "100%",
               maxWidth: "100%",
               backgroundColor: project.cover ? "transparent" : project.placeholderColor,
               boxShadow: isDragging
@@ -66,6 +66,7 @@ function ProjectCard({ project }: { project: Project }) {
                 : "0 4px 24px oklch(0 0 0 / 0.4)",
               transition: "box-shadow 300ms ease, transform 300ms cubic-bezier(0.16,1,0.3,1)",
               transform: isDragging ? "scale(1.03) rotate(0.5deg)" : "scale(1) rotate(0deg)",
+              flexShrink: 0,
             }}
             className="overflow-hidden"
           >
