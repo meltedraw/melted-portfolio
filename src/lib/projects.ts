@@ -16,7 +16,7 @@ export const projects: Project[] = [
     year: "2024",
     cover: null,
     coverRatio: "1/1",
-    placeholderColor: "oklch(0.28 0.008 260)",
+    placeholderColor: "oklch(0.6 0.005 250)",
   },
   {
     id: "002",
@@ -25,7 +25,7 @@ export const projects: Project[] = [
     year: "2025",
     cover: null,
     coverRatio: "1/1",
-    placeholderColor: "oklch(0.26 0.010 30)",
+    placeholderColor: "oklch(0.6 0.005 250)",
   },
   {
     id: "003",
@@ -34,7 +34,7 @@ export const projects: Project[] = [
     year: "2024",
     cover: null,
     coverRatio: "4/3",
-    placeholderColor: "oklch(0.24 0.007 200)",
+    placeholderColor: "oklch(0.6 0.005 250)",
   },
   {
     id: "004",
@@ -43,7 +43,7 @@ export const projects: Project[] = [
     year: "2024",
     cover: null,
     coverRatio: "3/4",
-    placeholderColor: "oklch(0.30 0.009 340)",
+    placeholderColor: "oklch(0.6 0.005 250)",
   },
   {
     id: "005",
@@ -52,7 +52,7 @@ export const projects: Project[] = [
     year: "2023",
     cover: null,
     coverRatio: "4/5",
-    placeholderColor: "oklch(0.27 0.006 80)",
+    placeholderColor: "oklch(0.6 0.005 250)",
   },
   {
     id: "006",
@@ -61,7 +61,7 @@ export const projects: Project[] = [
     year: "2023",
     cover: null,
     coverRatio: "3/2",
-    placeholderColor: "oklch(0.29 0.012 180)",
+    placeholderColor: "oklch(0.6 0.005 250)",
   },
   {
     id: "007",
@@ -70,6 +70,6 @@ export const projects: Project[] = [
     year: "2023",
     cover: null,
     coverRatio: "16/9",
-    placeholderColor: "oklch(0.25 0.008 300)",
+    placeholderColor: "oklch(0.6 0.005 250)",
   },
 ];

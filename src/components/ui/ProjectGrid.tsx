@@ -37,7 +37,7 @@ function ProjectCard({ project }: { project: Project }) {
   };
 
   return (
-    <div ref={setNodeRef} style={style} className="group">
+    <div ref={setNodeRef} style={style} className="group flex flex-col items-center">
       {/* Zona drag — solo sull'immagine */}
       <div
         {...attributes}
@@ -84,8 +84,8 @@ function ProjectCard({ project }: { project: Project }) {
       </div>
 
       {/* Info — cliccabili, non draggabili */}
-      <Link href={`/work/${project.id}`} className="block mt-2 px-0">
-        <div className="flex items-baseline gap-1">
+      <Link href={`/work/${project.id}`} className="inline-flex mt-2 max-w-full">
+        <div className="flex items-baseline gap-1 min-w-0">
           <span
             style={{
               fontFamily: "var(--font-mono)",
@@ -117,7 +117,7 @@ function ProjectCard({ project }: { project: Project }) {
               overflow: "hidden",
               textOverflow: "ellipsis",
               whiteSpace: "nowrap",
-              flex: 1,
+              minWidth: 0,
             }}
           >
             {project.title}
