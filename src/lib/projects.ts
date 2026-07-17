@@ -4,9 +4,7 @@ export type Project = {
   category: string;
   year: string;
   cover: string | null;
-  // aspect ratio della cover reale — varia per progetto
   coverRatio: "1/1" | "4/3" | "3/4" | "16/9" | "4/5" | "3/2";
-  // colore placeholder (usato fino a quando non c'è la cover reale)
   placeholderColor: string;
 };
 
@@ -18,7 +16,7 @@ export const projects: Project[] = [
     year: "2024",
     cover: null,
     coverRatio: "1/1",
-    placeholderColor: "oklch(0.18 0.012 260)",
+    placeholderColor: "oklch(0.28 0.008 260)",
   },
   {
     id: "002",
@@ -27,7 +25,7 @@ export const projects: Project[] = [
     year: "2025",
     cover: null,
     coverRatio: "1/1",
-    placeholderColor: "oklch(0.16 0.015 30)",
+    placeholderColor: "oklch(0.26 0.010 30)",
   },
   {
     id: "003",
@@ -36,7 +34,7 @@ export const projects: Project[] = [
     year: "2024",
     cover: null,
     coverRatio: "4/3",
-    placeholderColor: "oklch(0.15 0.008 200)",
+    placeholderColor: "oklch(0.24 0.007 200)",
   },
   {
     id: "004",
@@ -45,7 +43,7 @@ export const projects: Project[] = [
     year: "2024",
     cover: null,
     coverRatio: "3/4",
-    placeholderColor: "oklch(0.17 0.01 340)",
+    placeholderColor: "oklch(0.30 0.009 340)",
   },
   {
     id: "005",
@@ -54,7 +52,7 @@ export const projects: Project[] = [
     year: "2023",
     cover: null,
     coverRatio: "4/5",
-    placeholderColor: "oklch(0.14 0.006 80)",
+    placeholderColor: "oklch(0.27 0.006 80)",
   },
   {
     id: "006",
@@ -62,8 +60,8 @@ export const projects: Project[] = [
     category: "Album Art",
     year: "2023",
     cover: null,
-    coverRatio: "1/1",
-    placeholderColor: "oklch(0.19 0.014 180)",
+    coverRatio: "3/2",
+    placeholderColor: "oklch(0.29 0.012 180)",
   },
   {
     id: "007",
@@ -72,6 +70,6 @@ export const projects: Project[] = [
     year: "2023",
     cover: null,
     coverRatio: "16/9",
-    placeholderColor: "oklch(0.16 0.009 300)",
+    placeholderColor: "oklch(0.25 0.008 300)",
   },
 ];

@@ -4,19 +4,19 @@ export default function Footer() {
   return (
     <footer
       style={{
-        fontFamily: "var(--font-mono)",
-        borderTop: "1px solid oklch(0.18 0.005 250)",
-        padding: "3rem 1.5rem",
+        backgroundColor: "oklch(0.17 0.003 250)",
+        padding: "1.5rem",
       }}
     >
       {/* Contatti */}
-      <div className="flex flex-col items-center gap-3 mb-8">
+      <div className="flex flex-col items-center gap-2 mb-4">
         <a
           href="mailto:ranallogioele@gmail.com"
           style={{
-            fontSize: "0.72rem",
-            letterSpacing: "0.06em",
-            color: "oklch(0.72 0.008 250)",
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.68rem",
+            letterSpacing: "0.05em",
+            color: "oklch(0.65 0.007 250)",
           }}
           className="uppercase hover:text-[oklch(0.93_0.006_250)] transition-colors"
         >
@@ -27,9 +27,10 @@ export default function Footer() {
           target="_blank"
           rel="noopener noreferrer"
           style={{
-            fontSize: "0.72rem",
-            letterSpacing: "0.06em",
-            color: "oklch(0.72 0.008 250)",
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.68rem",
+            letterSpacing: "0.05em",
+            color: "oklch(0.65 0.007 250)",
           }}
           className="uppercase hover:text-[oklch(0.93_0.006_250)] transition-colors"
         >
@@ -37,11 +38,12 @@ export default function Footer() {
         </a>
       </div>
 
-      {/* Bottom row */}
+      {/* Bottom */}
       <div className="flex items-center justify-between">
         <span
           style={{
-            fontSize: "0.62rem",
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.6rem",
             letterSpacing: "0.05em",
             color: "oklch(0.38 0.004 250)",
           }}
@@ -51,7 +53,8 @@ export default function Footer() {
         </span>
         <span
           style={{
-            fontSize: "0.62rem",
+            fontFamily: "var(--font-mono)",
+            fontSize: "0.6rem",
             letterSpacing: "0.05em",
             color: "oklch(0.38 0.004 250)",
           }}

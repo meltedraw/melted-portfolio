@@ -84,7 +84,7 @@ function ProjectCard({ project }: { project: Project }) {
 
       {/* Info — cliccabili, non draggabili */}
       <Link href={`/work/${project.id}`} className="block mt-2 px-0">
-        <div className="flex items-baseline gap-2">
+        <div className="flex items-baseline gap-1">
           <span
             style={{
               fontFamily: "var(--font-mono)",
@@ -95,6 +95,17 @@ function ProjectCard({ project }: { project: Project }) {
             }}
           >
             {project.id}
+          </span>
+          <span
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: "0.65rem",
+              color: "oklch(0.42 0.005 250)",
+              letterSpacing: "0.04em",
+              flexShrink: 0,
+            }}
+          >
+            —
           </span>
           <span
             style={{
@@ -117,8 +128,8 @@ function ProjectCard({ project }: { project: Project }) {
               color: "oklch(0.38 0.004 250)",
               letterSpacing: "0.03em",
               flexShrink: 0,
+              marginLeft: "0.5rem",
             }}
-            className="hidden sm:block"
           >
             {project.year}
           </span>
