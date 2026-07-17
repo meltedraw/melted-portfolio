@@ -6,7 +6,8 @@ export default function Home() {
     <>
       {/* Hero minimale — solo respiro */}
       <section
-        style={{ paddingTop: "18vh", paddingBottom: "10vh", paddingLeft: "1.5rem" }}
+        style={{ paddingTop: "18vh", paddingBottom: "10vh" }}
+        className="flex justify-center"
       >
         <p
           style={{
@@ -14,6 +15,7 @@ export default function Home() {
             fontSize: "clamp(0.65rem, 1.5vw, 0.8rem)",
             letterSpacing: "0.1em",
             color: "oklch(0.48 0.006 250)",
+            textAlign: "center",
           }}
           className="uppercase"
         >
