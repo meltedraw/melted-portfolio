@@ -7,75 +7,67 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
+    const onScroll = () => setScrolled(window.scrollY > 80);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const linkStyle = {
+    fontFamily: "var(--font-mono)",
+    letterSpacing: "0.06em",
+    fontSize: scrolled ? "0.65rem" : "0.75rem",
+    transition: "font-size 350ms cubic-bezier(0.16,1,0.3,1), color 200ms ease",
+  };
+
   return (
     <header
       style={{
-        fontFamily: "var(--font-mono)",
-        backgroundColor: scrolled ? "#111111" : "transparent",
-        borderBottom: scrolled ? "1px solid var(--color-border)" : "1px solid transparent",
-        transition: "background-color 400ms var(--ease-out), border-color 400ms var(--ease-out), padding 400ms var(--ease-out)",
+        backgroundColor: scrolled ? "oklch(0.13 0.002 250)" : "transparent",
+        borderBottom: `1px solid ${scrolled ? "oklch(0.22 0.003 250)" : "transparent"}`,
+        backdropFilter: scrolled ? "blur(12px)" : "none",
+        transition: "background-color 350ms cubic-bezier(0.16,1,0.3,1), border-color 350ms cubic-bezier(0.16,1,0.3,1)",
+        padding: scrolled ? "0.6rem 1.5rem" : "1.25rem 1.5rem",
       }}
-      className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between ${scrolled ? "px-6 py-2" : "px-6 py-5"}`}
+      className="fixed top-0 left-0 right-0 z-50 flex items-center"
     >
-      <nav className="flex gap-6">
-        <Link
-          href="/#work"
-          style={{
-            color: "var(--color-fg-muted)",
-            fontSize: scrolled ? "0.7rem" : "0.8rem",
-            letterSpacing: "0.05em",
-            transition: "font-size 400ms var(--ease-out)",
-          }}
-          className="uppercase hover:text-[var(--color-fg)] transition-colors"
-        >
+      {/* Sinistra */}
+      <div className="flex gap-7 flex-1">
+        <Link href="/" style={{ ...linkStyle, color: "oklch(0.72 0.008 250)" }}
+          className="uppercase hover:text-[oklch(0.92_0.006_250)] transition-colors">
+          Home
+        </Link>
+        <Link href="/#work" style={{ ...linkStyle, color: "oklch(0.72 0.008 250)" }}
+          className="uppercase hover:text-[oklch(0.92_0.006_250)] transition-colors">
           Work
         </Link>
-        <Link
-          href="/about"
-          style={{
-            color: "var(--color-fg-muted)",
-            fontSize: scrolled ? "0.7rem" : "0.8rem",
-            letterSpacing: "0.05em",
-            transition: "font-size 400ms var(--ease-out)",
-          }}
-          className="uppercase hover:text-[var(--color-fg)] transition-colors"
-        >
-          About
-        </Link>
-      </nav>
+      </div>
 
+      {/* Centro — nome */}
       <Link
         href="/"
         style={{
-          color: "var(--color-fg)",
-          fontSize: scrolled ? "0.7rem" : "0.8rem",
-          letterSpacing: "0.08em",
-          transition: "font-size 400ms var(--ease-out)",
+          fontFamily: "var(--font-mono)",
+          fontSize: scrolled ? "0.65rem" : "0.75rem",
+          letterSpacing: "0.12em",
+          color: "oklch(0.93 0.006 250)",
           position: "absolute",
           left: "50%",
           transform: "translateX(-50%)",
+          transition: "font-size 350ms cubic-bezier(0.16,1,0.3,1)",
+          whiteSpace: "nowrap",
         }}
         className="uppercase"
       >
         Gioele Ranallo
       </Link>
 
-      <span
-        style={{
-          color: "var(--color-fg-muted)",
-          fontSize: scrolled ? "0.7rem" : "0.8rem",
-          letterSpacing: "0.05em",
-          transition: "font-size 400ms var(--ease-out)",
-        }}
-        className="uppercase"
-      >
-        Graphic Designer
-      </span>
+      {/* Destra */}
+      <div className="flex flex-1 justify-end">
+        <Link href="/about" style={{ ...linkStyle, color: "oklch(0.72 0.008 250)" }}
+          className="uppercase hover:text-[oklch(0.92_0.006_250)] transition-colors">
+          About
+        </Link>
+      </div>
     </header>
   );
 }

@@ -14,26 +14,13 @@
 }
 
 :root {
-  /* Colori — da finalizzare (nero vs tortora) */
-  --color-bg: #0a0a0a;
-  --color-fg: #f0ede8;
-  --color-fg-muted: #6b6b6b;
-  --color-border: #1f1f1f;
-
-  /* Font */
   --font-mono: "Commit Mono", monospace;
   --font-sans: "Inter", sans-serif;
-
-  /* Spacing scale */
-  --space-xs: 0.5rem;
-  --space-sm: 1rem;
-  --space-md: 2rem;
-  --space-lg: 4rem;
-  --space-xl: 8rem;
-
-  /* Transizioni */
+  --color-bg: oklch(0.08 0.004 250);
+  --color-fg: oklch(0.93 0.006 250);
+  --color-fg-muted: oklch(0.55 0.006 250);
+  --color-border: oklch(0.18 0.005 250);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
-  --duration-base: 300ms;
 }
 
 html {
@@ -47,5 +34,10 @@ body {
   font-family: var(--font-sans);
   font-size: 1rem;
   line-height: 1.6;
-  min-height: 100vh;
+  min-height: 100svh;
 }
+
+/* Scroll bar sottile */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 2px; }
