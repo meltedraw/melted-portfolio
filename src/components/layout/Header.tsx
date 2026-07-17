@@ -40,6 +40,10 @@ export default function Header() {
           className="uppercase hover:text-[oklch(0.92_0.006_250)] transition-colors">
           Work
         </Link>
+        <Link href="/about" style={{ ...linkStyle, color: "oklch(0.72 0.008 250)" }}
+          className="uppercase hover:text-[oklch(0.92_0.006_250)] transition-colors">
+          About
+        </Link>
       </div>
 
       {/* Centro — nome */}
@@ -61,12 +65,14 @@ export default function Header() {
         Gioele Ranallo
       </Link>
 
-      {/* Destra */}
+      {/* Destra — placeholder bilanciamento */}
       <div className="flex flex-1 justify-end">
-        <Link href="/about" style={{ ...linkStyle, color: "oklch(0.72 0.008 250)" }}
-          className="uppercase hover:text-[oklch(0.92_0.006_250)] transition-colors">
-          About
-        </Link>
+        <span
+          style={{ ...linkStyle, color: "oklch(0.38 0.005 250)" }}
+          className="uppercase"
+        >
+          Graphic Designer
+        </span>
       </div>
     </header>
   );

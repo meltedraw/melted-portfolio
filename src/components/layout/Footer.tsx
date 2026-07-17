@@ -5,21 +5,61 @@ export default function Footer() {
     <footer
       style={{
         fontFamily: "var(--font-mono)",
-        borderTop: "1px solid var(--color-border)",
-        color: "var(--color-fg-muted)",
-        fontSize: "0.75rem",
-        letterSpacing: "0.05em",
+        borderTop: "1px solid oklch(0.18 0.005 250)",
+        padding: "3rem 1.5rem",
       }}
-      className="flex items-center justify-between px-6 py-4"
     >
-      <span>© {year} Gioele Ranallo</span>
-      <a
-        href="mailto:ranallogioele@gmail.com"
-        style={{ color: "var(--color-fg-muted)" }}
-        className="uppercase hover:opacity-60 transition-opacity"
-      >
-        ranallogioele@gmail.com
-      </a>
+      {/* Contatti */}
+      <div className="flex flex-col items-center gap-3 mb-8">
+        <a
+          href="mailto:ranallogioele@gmail.com"
+          style={{
+            fontSize: "0.72rem",
+            letterSpacing: "0.06em",
+            color: "oklch(0.72 0.008 250)",
+          }}
+          className="uppercase hover:text-[oklch(0.93_0.006_250)] transition-colors"
+        >
+          ranallogioele@gmail.com
+        </a>
+        <a
+          href="https://www.instagram.com/meltedraw"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            fontSize: "0.72rem",
+            letterSpacing: "0.06em",
+            color: "oklch(0.72 0.008 250)",
+          }}
+          className="uppercase hover:text-[oklch(0.93_0.006_250)] transition-colors"
+        >
+          @meltedraw
+        </a>
+      </div>
+
+      {/* Bottom row */}
+      <div className="flex items-center justify-between">
+        <span
+          style={{
+            fontSize: "0.62rem",
+            letterSpacing: "0.05em",
+            color: "oklch(0.38 0.004 250)",
+          }}
+          className="uppercase"
+        >
+          © {year} Gioele Ranallo
+        </span>
+        <span
+          style={{
+            fontSize: "0.62rem",
+            letterSpacing: "0.05em",
+            color: "oklch(0.38 0.004 250)",
+          }}
+          className="uppercase"
+        >
+          Graphic Designer — Milano
+        </span>
+      </div>
     </footer>
   );
 }

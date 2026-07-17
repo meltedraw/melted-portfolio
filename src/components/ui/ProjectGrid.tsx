@@ -60,7 +60,7 @@ function ProjectCard({ project }: { project: Project }) {
               aspectRatio: project.coverRatio,
               maxHeight: "100%",
               maxWidth: "100%",
-              backgroundColor: project.placeholderColor,
+              backgroundColor: project.cover ? "transparent" : project.placeholderColor,
               boxShadow: isDragging
                 ? "0 24px 48px oklch(0 0 0 / 0.7)"
                 : "0 4px 24px oklch(0 0 0 / 0.4)",
@@ -69,7 +69,7 @@ function ProjectCard({ project }: { project: Project }) {
             }}
             className="overflow-hidden"
           >
-            {project.cover ? (
+            {project.cover && (
               // eslint-disable-next-line @next/next/no-img-element
               <img
                 src={project.cover}
@@ -77,20 +77,20 @@ function ProjectCard({ project }: { project: Project }) {
                 className="w-full h-full object-cover"
                 draggable={false}
               />
-            ) : null}
+            )}
           </div>
         </div>
       </div>
 
       {/* Info — cliccabili, non draggabili */}
-      <Link href={`/work/${project.id}`} className="block mt-3 px-1">
-        <div className="flex items-baseline justify-between gap-3">
+      <Link href={`/work/${project.id}`} className="block mt-2 px-0">
+        <div className="flex items-baseline gap-2">
           <span
             style={{
               fontFamily: "var(--font-mono)",
-              fontSize: "0.7rem",
-              color: "oklch(0.55 0.006 250)",
-              letterSpacing: "0.08em",
+              fontSize: "0.65rem",
+              color: "oklch(0.42 0.005 250)",
+              letterSpacing: "0.04em",
               flexShrink: 0,
             }}
           >
@@ -99,12 +99,13 @@ function ProjectCard({ project }: { project: Project }) {
           <span
             style={{
               fontFamily: "var(--font-mono)",
-              fontSize: "0.72rem",
-              color: "oklch(0.82 0.006 250)",
-              letterSpacing: "0.02em",
+              fontSize: "0.68rem",
+              color: "oklch(0.78 0.006 250)",
+              letterSpacing: "0.01em",
               overflow: "hidden",
               textOverflow: "ellipsis",
               whiteSpace: "nowrap",
+              flex: 1,
             }}
           >
             {project.title}
@@ -112,12 +113,12 @@ function ProjectCard({ project }: { project: Project }) {
           <span
             style={{
               fontFamily: "var(--font-mono)",
-              fontSize: "0.62rem",
-              color: "oklch(0.48 0.005 250)",
-              letterSpacing: "0.06em",
+              fontSize: "0.6rem",
+              color: "oklch(0.38 0.004 250)",
+              letterSpacing: "0.03em",
               flexShrink: 0,
             }}
-            className="uppercase hidden sm:block"
+            className="hidden sm:block"
           >
             {project.year}
           </span>
@@ -173,7 +174,7 @@ export default function ProjectGrid({ projects }: { projects: Project[] }) {
     <DndContext sensors={sensors} collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
       <SortableContext items={items.map((p) => p.id)} strategy={rectSortingStrategy}>
         <div
-          style={{ gap: "3rem 2rem" }}
+          style={{ gap: "5rem 3rem" }}
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
         >
           {items.map((project) => (
