@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@import "@fontsource/commit-mono/400.css";
+@import "@fontsource/commit-mono/700.css";
+@import "@fontsource/inter/400.css";
+@import "@fontsource/inter/500.css";
+
 *,
 *::before,
 *::after {
@@ -8,7 +13,39 @@
   padding: 0;
 }
 
+:root {
+  /* Colori — da finalizzare (nero vs tortora) */
+  --color-bg: #0a0a0a;
+  --color-fg: #f0ede8;
+  --color-fg-muted: #6b6b6b;
+  --color-border: #1f1f1f;
+
+  /* Font */
+  --font-mono: "Commit Mono", monospace;
+  --font-sans: "Inter", sans-serif;
+
+  /* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 4rem;
+  --space-xl: 8rem;
+
+  /* Transizioni */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-base: 300ms;
+}
+
 html {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+  min-height: 100vh;
 }
